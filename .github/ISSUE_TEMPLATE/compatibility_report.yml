@@ -1,0 +1,89 @@
+name: App/game compatibility report
+description: Report how well or badly a Windows app or game runs through Kirito.
+title: "[Compatibility] "
+labels: ["compatibility", "needs-triage"]
+body:
+  - type: input
+    id: app-name
+    attributes:
+      label: App or game name
+      placeholder: Until Dawn, Steam, Battle.net, Quicken...
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: Store/source
+      options:
+        - Steam
+        - GOG
+        - Epic Games
+        - Battle.net
+        - Ubisoft Connect
+        - Rockstar Launcher
+        - Standalone installer
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: How well did it run?
+      options:
+        - Perfect
+        - Playable
+        - Launches but broken
+        - Does not launch
+        - Blocked by anti-cheat or online service
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: settings
+    attributes:
+      label: Settings used
+      description: Fill in what you know.
+      placeholder: |
+        D3DMetal:
+        DXVK:
+        MSync:
+        Retina:
+        VSync:
+        Wine engine:
+    validations:
+      required: false
+  - type: textarea
+    id: worked
+    attributes:
+      label: What worked?
+      placeholder: Install, login, menus, gameplay, controller...
+    validations:
+      required: false
+  - type: textarea
+    id: failed
+    attributes:
+      label: What failed?
+      placeholder: Crash, black screen, launcher stuck, bad performance...
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anti-cheat, controller, launcher, or login notes
+      placeholder: Easy Anti-Cheat, Steam Input, Rockstar launcher, web helper...
+    validations:
+      required: false
+  - type: input
+    id: mac
+    attributes:
+      label: Mac model / chip
+      placeholder: M4 Mac mini
+    validations:
+      required: false
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: macOS 15.5
+    validations:
+      required: false

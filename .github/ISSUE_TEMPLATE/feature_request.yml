@@ -1,0 +1,40 @@
+name: Feature request
+description: Suggest a new Kirito feature or workflow improvement.
+title: "[Feature] "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: What should Kirito add or improve?
+      placeholder: Kirito should...
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does this matter?
+      description: Explain the user problem or workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: ideal
+    attributes:
+      label: What would a good version look like?
+      placeholder: A good implementation would...
+    validations:
+      required: false
+  - type: input
+    id: related
+    attributes:
+      label: Related app/game/workflow
+      placeholder: Steam library, controller diagnostics, CrossOver engine selection...
+    validations:
+      required: false
+  - type: textarea
+    id: references
+    attributes:
+      label: References or examples
+      description: Link similar tools, screenshots, docs, or reports if useful.
+    validations:
+      required: false

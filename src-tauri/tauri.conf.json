@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "kirito",
+  "version": "0.1.0",
+  "identifier": "app.kirito.desktop",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devUrl": "http://127.0.0.1:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "kirito",
+        "width": 1180,
+        "height": 760,
+        "minWidth": 980,
+        "minHeight": 680,
+        "hiddenTitle": true,
+        "titleBarStyle": "Overlay"
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "app"
+    ],
+    "icon": [
+      "icons/icon.icns",
+      "icons/icon.ico",
+      "icons/icon.png"
+    ],
+    "resources": {
+      "../Engines/metal-runtime.tar.gz": "metal-runtime.tar.gz"
+    }
+  }
+}

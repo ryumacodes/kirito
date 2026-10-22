@@ -1,0 +1,66 @@
+{
+  "launcherRiskTokens": [
+    "assassinscreed",
+    "battlefield",
+    "cyberpunk2077",
+    "dragonage",
+    "eafc",
+    "farcry",
+    "grandtheftauto",
+    "reddeadredemption",
+    "starwars",
+    "thecrew",
+    "watchdogs"
+  ],
+  "antiCheatRiskTokens": [
+    "apexlegends",
+    "battlefield",
+    "callofduty",
+    "destiny2",
+    "eafc",
+    "fallguys",
+    "fortnite",
+    "helldivers2",
+    "pubg",
+    "rainbowsixsiege",
+    "valorant"
+  ],
+  "appRules": [
+    {
+      "appId": 730,
+      "name": "Counter-Strike 2",
+      "title": "CS2 CrossOver parity profile",
+      "confidence": "High",
+      "settings": {
+        "d3dMetal": true,
+        "dxvk": false,
+        "msync": true,
+        "retina": false,
+        "vsync": true
+      },
+      "rationale": [
+        "CS2 on Mac needs CrossOver/GPTK-class D3DMetal, not stock Wine.",
+        "Kirito mirrors CrossOver guidance: D3DMetal on, DXVK off, MSync on, Retina off.",
+        "Launch uses -applaunch with -nojoy -novid -fullscreen and sets Wine Direct3D VideoMemorySize from system RAM."
+      ],
+      "warnings": [
+        "Install CrossOver or Game Porting Toolkit with D3DMetal before expecting playable CS2.",
+        "VAC is usually fine under Wine/CrossOver, but secure-server errors can still happen if the translation layer fails."
+      ]
+    },
+    {
+      "appId": 2172010,
+      "title": "Until Dawn compatibility profile",
+      "confidence": "High",
+      "settings": {
+        "d3dMetal": true,
+        "dxvk": false,
+        "msync": true
+      },
+      "rationale": [
+        "Until Dawn has a Kirito-specific AVX/Rosetta launch path, so keep the modern Metal path unless testing proves otherwise."
+      ],
+      "warnings": []
+    }
+  ]
+}

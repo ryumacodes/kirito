@@ -1,0 +1,70 @@
+name: Issue report
+description: Report a Kirito bug, crash, broken flow, or incorrect behavior.
+title: "[Issue] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for Kirito itself behaving incorrectly. For app/game compatibility results, use the compatibility report instead.
+  - type: textarea
+    id: what-broke
+    attributes:
+      label: What broke?
+      description: Describe the bug or bad behavior.
+      placeholder: Kirito did...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: List the exact steps that trigger the issue.
+      placeholder: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: I expected Kirito to...
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: Instead...
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: macOS 15.5
+    validations:
+      required: false
+  - type: input
+    id: mac
+    attributes:
+      label: Mac model / chip
+      placeholder: M3 Pro MacBook Pro
+    validations:
+      required: false
+  - type: input
+    id: engine
+    attributes:
+      label: CrossOver/Wine engine
+      placeholder: CrossOver 26.2 / wine-11...
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, screenshots, or extra context
+      description: Paste relevant logs or attach screenshots if available.
+    validations:
+      required: false
