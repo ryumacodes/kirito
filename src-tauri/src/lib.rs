@@ -1,4 +1,5 @@
 mod bedrock;
+mod steam_logs;
 use serde::{Deserialize, Serialize};
 use std::{
     collections::{HashMap, HashSet},
@@ -1925,6 +1926,9 @@ fn run_wine_process_with_key_and_app_name(
     args: &[&str],
     preloader_app_name: Option<&str>,
 ) -> Result<(), String> {
+    if bottle.name == "Steam" || app_key == Some("steam-client") {
+        steam_logs::protect(&bottle.path)?;
+    }
     let override_settings = app_key.and_then(|key| bottle.app_settings.get(key));
     let engine = select_engine(app, override_settings)?;
     let effective_settings = effective_settings(&bottle.settings, override_settings);
@@ -2189,7 +2193,7 @@ fn apply_steam_registry_tweaks(app: &tauri::AppHandle, bottle: &Bottle) -> Resul
         (
             r#"HKCU\Software\Wine\AppDefaults\steamwebhelper.exe"#,
             "Version",
-            "xp",
+            "win10",
         ),
     ];
 
